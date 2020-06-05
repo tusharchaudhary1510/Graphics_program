@@ -1,0 +1,85 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ int x=40,y=25;
+   char ch;
+   clrscr();
+   gotoxy(x,y);
+   printf("*");
+   ch=getch();
+   while(ch!=13)
+ {
+   ch=getch();
+   if(ch==75)
+  {
+     x--;
+     gotoxy(x+1,y);
+     printf(" ");
+     gotoxy(x,y);
+     printf("*");
+
+     if(x==1)
+    {
+      gotoxy(x,y);
+      printf(" ");
+      x=78;
+      gotoxy(x,y);
+      printf("*");
+     }
+   }
+   if(ch==72)
+   {
+      y--;
+      gotoxy(x,y+1);
+      printf(" ");
+      gotoxy(x,y);
+      printf("*");
+
+      if(y==1)
+     {
+       gotoxy(x,y);
+       printf(" ");
+       y=25;
+       gotoxy(x,y);
+       printf("*");
+      }
+   }
+    if(ch==77)
+   {
+      x++;
+      gotoxy(x-1,y);
+      printf(" ");
+      gotoxy(x,y);
+      printf("*");
+
+      if(x==77)
+     {
+      gotoxy(x,y);
+      printf(" ");
+      x=1;
+      gotoxy(x,y);
+      printf("*");
+     }
+  }
+   if(ch==80)
+  {
+    y++;
+    gotoxy(x,y-1);
+    printf(" ");
+    gotoxy(x,y);
+    printf("*");
+
+    if(y==25)
+    {
+     gotoxy(x,y);
+     printf(" ");
+     y=1;
+     gotoxy(x,y);
+     printf("*");
+   }
+  }
+}
+
+ getch();
+}

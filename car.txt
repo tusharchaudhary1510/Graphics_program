@@ -1,0 +1,90 @@
+#include<graphics.h>
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ int main()
+ {
+ int gd=DETECT,gm;
+ int i,x,y,ch,c=0,d=-1;
+ initgraph(&gd,&gm,"c://TC//BGI");
+ x=getmaxx();
+ y=getmaxx()/2;
+ for(i=0;i<x-150;i=i+4)
+{
+  cleardevice();
+  setcolor(WHITE);
+  line(0,y+37,x,y+37);
+  setcolor(YELLOW);
+  setfillstyle(SOLID_FILL,RED);
+
+  line(i,y-20,i,y);
+  line(i,y+23,i,y);
+  line(i,y,40+i,y-20);
+  line(40+i,y-20,80+i,y-20);
+  line(80+i,y-20,100+i,y);
+
+  line(100+i,y,120+i,y);
+  line(120+i,y,120+i,y+23);
+  line(0+i,y+23,18+i,y+23);
+
+  arc(30+i,y+23,0,180,12);
+  line(42+i,y+23,78+i,y+23);
+  arc(90+i,y+23,0,180,12);
+
+  line(102+i,y+23,120+i,y+23);
+  line(28+i,y,43+i,y-15);
+  line(43+i,y-15,57+i,y-15);
+  line(57+i,y-15,57+i,y);
+  line(57+i,y,28+i,y);
+
+  line(62+i,y-15,77+i,y-15);
+  line(77+i,y-15,92+i,y);
+  line(92+i,y,62+i,y);
+  line(62+i,y,62+i,y-15);
+
+  floodfill(5+i,y+22,YELLOW);
+  setcolor(BLUE);
+  setfillstyle(SOLID_FILL,DARKGRAY);
+
+  circle(30+i,y+25,9);
+  circle(90+i,y+25,9);
+  floodfill(30+i,y+25,BLUE);
+  floodfill(90+i,y+25,BLUE);
+
+
+
+
+  if(kbhit())
+   {
+    ch=getch();
+    if(ch==72) //up
+   {
+      c=0;
+      d=-1;
+     }
+    if(ch==75)
+   {
+      c=-1;
+      d=0;
+     }
+    if(ch==77)
+   {
+     c=1;
+     d=0;
+     }
+    if(ch==80)
+   {
+      c=0;
+      d=1;
+     }
+   if(ch==13)
+   exit(0);
+  }
+   x=x+c;
+   y=y+d;
+  delay(10);
+  }
+getch();
+ closegraph();
+}
